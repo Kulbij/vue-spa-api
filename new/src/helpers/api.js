@@ -10,7 +10,7 @@ if (process.env.NODE_ENV == "production") {
 
 const api = axios.create({
     baseURL: url,
-    timeout: 100000
+    timeout: 10000
 });
 
 api.interceptors.request.use(
@@ -41,10 +41,9 @@ api.interceptors.response.use(
           localStorage.removeItem("step-employee");
           localStorage.removeItem("step-orders");
           localStorage.removeItem("isPayment");
-          
+          router.push({ name: "Login" });
           return Promise.reject(error);
       }
-
       if (error.response.status === 422 || error.response.status === 429) {
           return Promise.reject(error);
       }

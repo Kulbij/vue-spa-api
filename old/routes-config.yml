@@ -2,7 +2,7 @@ pageRoutes:
   homepage: "/"
 
 apiRoutes:
-  domainCreate: "/domains"
+  postCreate: "/post/create"
   
 devURL: http://api-app.localhost/api/v1/
 prodURL: http://api-app.localhost/api/v1/

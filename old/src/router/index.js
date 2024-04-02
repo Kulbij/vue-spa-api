@@ -34,9 +34,9 @@ router.beforeEach(async (to, from, next) => {
   // store.commit("Set_Links", false);
   // if (!store.getters.ROUTERS) await store.dispatch("GetRouters");
   
-  // if (!withoutToken.includes(to.name)) {
-  //     await store.dispatch("RefreshToken");
-  // }
+  if (!withoutToken.includes(to.name)) {
+      await store.dispatch("RefreshToken");
+  }
   
   // if (!withoutToken.includes(to.name) && !isAuthenticated) next({ name: "Login" });
   // if (withTokenDef.includes(to.name) && isAuthenticated) next({ name: "MyProfile" });

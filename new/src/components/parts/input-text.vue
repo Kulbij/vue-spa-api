@@ -1,20 +1,21 @@
 <template>
   <div class="main" :class="{ 'not-valid': value && !valid, valid: value && valid }">
     <div class="input-box">
-        <select
-            :id="id"
+        <span
+            v-if="label"
+            class="label m-text-food-title"
+        >{{ label }}</span>
+
+        <input
+            :type="type"
+            @blur="blurInput"
             class="input m-text-des"
+            :placeholder="placeholder"
             :value="value"
             @input="$emit('update:value', $event.target.value)"
+            :id="id"
             :autocomplete="autocomplete"
-        >
-            <option selected value v-text="emptyOption"></option>
-
-            <option
-                v-for="option in options"
-                v-bind:value="option.id"
-            >{{ option.name }}</option>
-        </select>
+        />
 
         <slot></slot>
     </div>
@@ -29,23 +30,21 @@
 <script>
 export default {
     props: {
-        options: {
-            type: Object,
-            default: {},
-        },
-        emptyOption: {
-            type: String,
-            default: 'Select category',
-        },
         autocomplete: {
+            type: String
+        },
+        type: {
+            type: String,
+            default: "text"
+        },
+        placeholder: {
             type: String
         },
         label: {
             type: String
         },
         value: {
-            type: [String, Number],
-            default: '0',
+            type: [String, Number]
         },
         id: {
             type: String

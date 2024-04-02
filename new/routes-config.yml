@@ -1,0 +1,73 @@
+pageRoutes:
+  main: "/"
+  login: "/login"
+  register: "/register"
+  # passwordRecovery: "/password-recovery"
+  # passwordCreate: "/password-create"
+  # passwordRestore: "/password-restore"
+  profile: "/profile"
+  account: "/account/edit"
+  accountMyBlog: "/account/blog"
+  accountPostCreate: "/account/post/create"
+  accountPostUpdate: "/account/post/update/:id"
+
+  # List users with their blog
+  users: /users
+  userPage: /user/:id
+
+  # Categories
+  accountMyBlogCategories: "/account/blog/categories"
+  accountCategoryCreate: "/account/blog/category/create"
+  accountCategoryUpdate: "/account/blog/category/update/:id"
+
+  # Tags
+  accountMyBlogTags: "/account/blog/tags"
+  accountTagCreate: "/account/blog/tag/create"
+  accountTagUpdate: "/account/blog/tag/update/:id"
+
+# emailRoutes:
+#   passwordCreateToken: "/password-create-token"
+#   passwordRestoreToken: "/password-restore-token"
+
+apiRoutes:
+  authLogin: /auth/login
+  userRegister: /users/register
+  # passwordForgot: /password/forgot
+  # passwordRestore: /password/restore
+  # passwordSet: /password/set
+  routesIndex: "/routes"
+  authLogout: /auth/logout
+  me: /me
+  authTokenRefresh: /auth/token/refresh
+  rolesIndex: /roles
+  passwordChange: /password/change
+  myProfile: "/profile" 
+  account: "/account" 
+  accountUpdate: "/account/update"
+  postIndex: "/posts"
+  postPublished: "/post/published"
+  postCreate: "/post/create"
+  postUpdate: "/post/update/{postId}"
+  postShow: "/post/show/{postId}"
+  postDelete: "/post/delete/{postId}"
+
+  # Categories
+  categoryIndex: "/categories"
+  categoryCreate: "/category/create"
+  categoryUpdate: "/category/update/{categoryId}"
+  categoryShow: "/category/show/{categoryId}"
+  categoryDelete: "/category/delete/{categoryId}"
+
+  # Tags
+  tagIndex: "/tags"
+  tagCreate: "/tag/create"
+  tagUpdate: "/tag/update/{tagId}"
+  tagShow: "/tag/show/{tagId}"
+  tagDelete: "/tag/delete/{tagId}"
+
+  # Gry list users
+  usersList: "/users"
+  
+
+devURL: http://spa-blog-api.localhost/api/v1/
+prodURL: http://spa-blog-api.localhost/api/v1/
